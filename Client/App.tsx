@@ -43,9 +43,6 @@ export default function App(): JSX.Element {
 				<Stack.Screen name="Main" component={MainPage} />
 			</Stack.Navigator>
 		</NavigationContainer>
-		// <SafeAreaView>
-		// 	<SignPage/>
-		// </SafeAreaView>
 	);
 }
 
