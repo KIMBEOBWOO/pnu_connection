@@ -7,6 +7,7 @@
  */
 
 import React from 'react';
+
 import { SafeAreaView, StyleSheet, ScrollView, View, Text, StatusBar } from 'react-native';
 
 import {
@@ -19,20 +20,34 @@ import {
 
 import { Button } from 'react-native-paper';
 
-const App = () => {
+/**
+ * 페이지 컴포넌트
+ */
+import MainPage from './src/page/MainPage';
+import SignPage from './src/page/SignPage';
+
+/**
+ * 스택 및 페이지 네비게이션
+ */
+// import 'react-native-gesture-handler';
+// import { NavigationContainer } from '@react-navigation/native';
+// import { createStackNavigator } from '@react-navigation/stack';
+
+// const Stack = createStackNavigator();
+
+export default function App(): JSX.Element {
 	return (
-		<>
-			<Button
-				icon="camera"
-				mode="contained"
-				onPress={() => console.log('Pressed')}
-				style={{ marginTop: 102 }}
-			>
-				Press me
-			</Button>
-		</>
+		// <NavigationContainer>
+		// 	<Stack.Navigator>
+		// 		<Stack.Screen name="Sign" component={SignPage} />
+		// 		<Stack.Screen name="Main" component={MainPage} />
+		// 	</Stack.Navigator>
+		// </NavigationContainer>
+		<SafeAreaView>
+			<SignPage/>
+		</SafeAreaView>
 	);
-};
+}
 
 const styles = StyleSheet.create({
 	scrollView: {
@@ -72,5 +87,3 @@ const styles = StyleSheet.create({
 		textAlign: 'right',
 	},
 });
-
-export default App;
