@@ -7,7 +7,7 @@ import { Button, Title, TextInput, Text } from 'react-native-paper';
  * hooks
  */
 import useEventTargetValue from '../../utils/hooks/useEventTargetValue';
-
+import { useNavigation } from "@react-navigation/native";
 export interface LoginLayoutProps {
 	handleLoginPage: (pageState: boolean) => void;
 }
@@ -16,6 +16,9 @@ export default function LoginLayout(props: LoginLayoutProps): JSX.Element {
 	const { handleLoginPage } = props;
 	const id = useEventTargetValue();
 	const pw = useEventTargetValue();
+
+	const navigate = useNavigation();
+	
 
 	return (
 		<SafeAreaView
@@ -60,6 +63,7 @@ export default function LoginLayout(props: LoginLayoutProps): JSX.Element {
 				mode="contained"
 				onPress={() => {
 					console.log(id.value, pw.value);
+					// navigate.navigate('Main');
 				}}
 				style={{
 					marginBottom: 8,
@@ -70,7 +74,8 @@ export default function LoginLayout(props: LoginLayoutProps): JSX.Element {
 			<Button
 				mode="outlined"
 				onPress={() => {
-					handleLoginPage(false);
+					// handleLoginPage(false);
+					navigate.navigate('SignUp');
 				}}
 			>
 				회원가입

@@ -25,6 +25,9 @@ import { Button } from 'react-native-paper';
  */
 import MainPage from './src/page/MainPage';
 import SignPage from './src/page/SignPage';
+import LoginLayout from './src/components/login-page/LoginLayout';
+import RegistLayout from './src/components/login-page/RegistLayout';
+
 
 /**
  * 스택 및 페이지 네비게이션
@@ -36,11 +39,24 @@ import { createStackNavigator } from '@react-navigation/stack';
 const Stack = createStackNavigator();
 
 export default function App(): JSX.Element {
+	const [isLogined, setIsLogined] = React.useState<boolean>(true);
+
+	const handleLoginPage = (loginState: boolean): void => {
+		setIsLogined(loginState);
+	};
+
 	return (
 		<NavigationContainer>
 			<Stack.Navigator>
-				<Stack.Screen name="Sign" component={SignPage} />
-				<Stack.Screen name="Main" component={MainPage} />
+				{isLogined? (
+	        <Stack.Screen name="Main" component={MainPage} />
+				):(
+					<>
+						<Stack.Screen name="SignIn" component={LoginLayout} />
+						<Stack.Screen name="SignUp" component={RegistLayout} />
+					</>
+				)}
+			
 			</Stack.Navigator>
 		</NavigationContainer>
 	);
