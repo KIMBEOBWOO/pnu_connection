@@ -1,0 +1,11 @@
+{
+  "name": "pnu_connection",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/KIMBEOBWOO/pnu_connection.git",
+  "author": "kimbeobwoo <qjqdn1568@naver.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@nestjs/cli": "7.5.4"
+  }
+}

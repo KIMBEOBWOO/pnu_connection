@@ -1,0 +1,10 @@
+{
+    "type": "mysql",
+    "host": "34.64.70.209",
+    "port": 3306,
+    "username": "root",
+    "password": "pnuconnection",
+    "database": "pnu_connection",
+    "entities": ["dist/**/*.entity{.ts,.js}"],
+    "synchronize": true
+}
